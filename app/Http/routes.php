@@ -11,10 +11,10 @@
 |
 */
 
-Route::match(['get', 'post'], '/aaa', function () {
-//    return view('welcome');
-    echo 'hello';
-});
+//Route::match(['get', 'post'], '/aaa', function () {
+////    return view('welcome');
+//    echo 'hello';
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +30,10 @@ Route::match(['get', 'post'], '/aaa', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+Route::get('/', function()
+{
+    return view('components.body');
+});
+
+Route::get('/project', 'ProjectController@index');
+Route::get('/project/{id}', 'ProjectController@show');
