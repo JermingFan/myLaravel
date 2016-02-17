@@ -5,11 +5,11 @@
 
             <div class="banner-top">
                 <ul class="nav banner-nav">
-                    <li><a href="index.html">主页</a></li>
-                    <li><a href="">项目</a></li>
-                    <li><a href="domain.html">xxx</a>
-                    <li class="navbar-right"><a href="domain.html" type="button" class="btn btn-success navbar-btn">注册</a>
-                    <li class="navbar-right"><a href="domain.html" type="button" class="btn btn-success navbar-btn">登录</a>
+                    <li><a href="{{ URL('/') }}">主页</a></li>
+                    <li><a href="{{ URL('/project') }}">xxx</a></li>
+                    <li><a href="{{ URL('/partner') }}">xxx</a>
+                    <li class="navbar-right"><a href="{{ URL('/register') }}" type="button" class="dt-sc-button small">注册</a>
+                    <li class="navbar-right"><a href="{{ URL('/login') }}" type="button" class="dt-sc-button small">登录</a>
                     </li>
                     <form>
                         <div class="nav search-bar">
