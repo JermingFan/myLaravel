@@ -19,11 +19,11 @@
     <script src="{{asset('/assets/js/jquery.easydropdown.js')}}"></script>
 
 </head>
+<body>
 
 <!-- Header Starts Here -->
 @include('components.navbar')
 <!-- Header Ends Here -->
-<body>
 
 @yield('content')
 
