@@ -13,7 +13,10 @@
                     </li>
                     <form>
                         <div class="nav search-bar">
-                            <input type="text"  value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
+                            <label>
+                                <input type="text" value="Search" onFocus="this.value = '';"
+                                       onBlur="if (this.value == '') {this.value = 'Search';}">
+                            </label>
                             <input type="submit" value="" />
                         </div>
                     </form>
