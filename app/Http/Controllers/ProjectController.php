@@ -15,9 +15,9 @@ class ProjectController extends Controller {
     public function index()
     {
         $date = $this->project->projects();
-        $nav = 'project';
+//        $nav = 'project';
 //        dd($date);
-        return view('projects.list')->withProjects($date, $nav);
+        return view('projects.list')->withProjects($date);
     }
 
     /**
