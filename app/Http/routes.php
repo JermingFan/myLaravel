@@ -37,3 +37,7 @@ Route::get('/', function()
 
 Route::get('/project', 'ProjectController@index');
 Route::get('/project/{id}', 'ProjectController@show');
+
+Route::get('/partner', 'PartnerController@index');
+
+Route::get('/register', 'Auth\AuthController@index');
