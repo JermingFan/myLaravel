@@ -14,12 +14,8 @@ class ProjectController extends Controller {
 
     public function index()
     {
-        $date = $this->project->projects();
-//        dd($date);
-//        echo "<pre>";
-//        var_dump($date);die;
-//        echo "</pre>";
-        return view('projects.list')->withProjects($date);
+        $data = $this->project->projects();
+        return view('projects.list')->withProjects($data);
     }
 
     /**
@@ -28,7 +24,7 @@ class ProjectController extends Controller {
      */
     public function show($id)
     {
-        $date = Project::find($id);
-        return view('projects.info')->withProject($date);
+        $data = Project::find($id);
+        return view('projects.info')->withProject($data);
     }
 }
