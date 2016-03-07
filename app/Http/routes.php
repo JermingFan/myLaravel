@@ -41,3 +41,9 @@ Route::get('/project/{id}', 'ProjectController@show');
 Route::get('/partner', 'PartnerController@index');
 
 Route::get('/register', 'Auth\AuthController@index');
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
