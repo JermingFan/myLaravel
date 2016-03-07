@@ -10,26 +10,23 @@
     <!-- Custom Theme files -->
     <link href="{{asset('/assets/css/style.css')}}" rel='stylesheet' type='text/css' />
     <link href="{{asset('/assets/css/nav.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <!-- webfonts -->
-    <link href='http://fonts.useso.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{asset('/assets/js/jquery-2.2.0.min.js')}}"></script>
     <!-- dropdown -->
     <script src="{{asset('/assets/js/jquery.easydropdown.js')}}"></script>
 
+    @yield('styles')
+
+    <meta name="_token" content="{{ csrf_token() }}"/>
 </head>
 <body>
 
-<!-- Header Starts Here -->
 @include('components.navbar')
-<!-- Header Ends Here -->
 
 @yield('content')
 
-<!-- #Footer -->
 @include('components.footer')
-<!-- /#Footer -->
 
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="{{asset('/assets/js/move-top.js')}}"></script>
@@ -60,6 +57,63 @@
     });
 </script>
 <!-- //here ends scrolling icon -->
+<script>(function (window, undefined) {
+        var Batmany_Easytip = window.Batmany_Easytip = function (text, delay, autoClose) {
+            return new Batmany_Easytip.fn.init(text, delay, autoClose);
+        };
+
+        Batmany_Easytip.fn = Batmany_Easytip.prototype = {
+            init : function (text, delay, autoClose) {
+                autoClose = autoClose || true;
+
+                var timeId = this.getTimeId();
+
+                this.create(text, delay, timeId, autoClose);
+            },
+            getTimeId : function () {
+                return 'batmany_easy_tip_' + new Date().getSeconds() + new Date().getMilliseconds();
+            },
+            create : function (text, delay, timeId, autoClose) {
+                document.getElementById('batmany_easytip').innerHTML = this.getTipHtml(text, timeId);
+
+                this.show(delay, timeId, autoClose);
+
+            },
+            getTipHtml : function (text, timeId) {
+                return '<div id="' + timeId + '" class="batmany-easy-tip">' + text + '</div>';
+            },
+            show : function (delay, timeId, autoClose) {
+                var tip = document.getElementById(timeId),
+                        that = this;
+
+                setTimeout(function () {
+                    tip.className += ' active';
+                }, 30);
+
+                delay = delay || 1000;
+
+                if (autoClose) {
+                    setTimeout(function () {
+                        that.destroy(tip);
+                    }, delay);
+                }
+
+                return this;
+            },
+            destroy : function (tip) {
+
+                if (tip) {
+                    tip.className = 'batmany-easy-tip';
+                }
+
+                return this;
+            }
+        };
+
+        Batmany_Easytip.fn.init.prototype = Batmany_Easytip.prototype;
+    })(window);
+</script>
+@yield('scripts')
 
 </body>
 </html>
