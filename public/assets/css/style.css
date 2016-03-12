@@ -40,7 +40,7 @@ label{
 }
 /*-- Header Part Starts Here --*/
 .header{
-    background: rgba(27, 188, 155, 0.5);
+    background: rgba(27, 188, 155, 0.35);
     padding: 0.5em 0;
 }
 .logo{
@@ -1021,12 +1021,12 @@ div#dedicated_servers {
     display: inline-block;
     background: transparent;
     border: 2px solid #1BBC9B;
-    padding: 20px 40px;
+    padding: 10px 20px;
     margin: 0 2px 2px 0;
     color: #000;
     text-transform: lowercase;
     font-weight: normal;
-    font-style: italic;
+    /*font-style: italic;*/
     font-size: 18px;
 }
 .ds .button {
@@ -1039,7 +1039,7 @@ div#dedicated_servers {
     color: #fff;
     text-transform: lowercase;
     font-weight: normal;
-    font-style: italic;
+    /*font-style: italic;*/
     font-size: 18px;
 }
 div#breadcrumb_wrapper h3 {
@@ -1060,7 +1060,7 @@ div#breadcrumb_wrapper h6 {
 /*-- plans & pricing --*/
 .PlanPricing .price{
     background:#1BBC9B;
-    padding:5px;
+    padding:0px;
     color:#FFF;
     font-size:42px;
     -webkit-border-radius:100%;
@@ -1326,10 +1326,10 @@ div#breadcrumb_wrapper h6 {
     display: block;
     text-transform: uppercase;
 }
-.login-right input[type="text"] {
+.login-right input[type="text"], input[type="email"], input[type="password"] {
     border: 1px solid #EEE;
     outline-color:#1BBC9B;
-    width: 96%;
+    width: 100%;
     font-size:0.8125em;
     padding: 0.5em;
 }
@@ -1346,6 +1346,7 @@ div#breadcrumb_wrapper h6 {
     text-transform: uppercase;
     border:none;
     outline:none;
+    width: 200px;
 }
 a.forgot {
     font-size: 1em;
@@ -1365,9 +1366,10 @@ a.forgot {
     margin: 0;
     font-weight: 500;
 }
+/*ff*/
 .register-top-grid div, .register-bottom-grid div {
     width: 48%;
-    float: left;
+    float: inherit;
     margin: 10px 0;
 }
 .register-top-grid span, .register-bottom-grid span {
