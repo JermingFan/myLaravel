@@ -1,5 +1,4 @@
 html, body{
-    font-family: 'Ubuntu', sans-serif;
     font-size:100%;
     background:#fff;
 }
@@ -41,7 +40,7 @@ label{
 /*-- Header Part Starts Here --*/
 .header{
     background: rgba(27, 188, 155, 0.35);
-    padding: 0.5em 0;
+    padding: 0 0;
 }
 .logo{
     float: left;
@@ -1908,8 +1907,8 @@ ul.list_3 ul li .dt-sc-button {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin-top: 25px;
-    margin-left: 3%;
+    margin-top: 0;
+    margin-left: 0;
 }
 .one-fifth input[type="submit"] {
     background: #1BBC9B;
@@ -1935,14 +1934,9 @@ ul.list_3 ul li .dt-sc-button {
     float:left;
 }
 .one-fifth {
-    width: 14%;
+    width: 15%;
     float:left;
-    margin-left:  1%;
-}
-.one-fifth {
-    width: 14%;
-    float:left;
-    margin-left:  1%;
+    margin-right:20px;
 }
 .domain-section {
     padding:4em 0;
