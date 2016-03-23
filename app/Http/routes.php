@@ -1,49 +1,33 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-//Route::match(['get', 'post'], '/aaa', function () {
-////    return view('welcome');
-//    echo 'hello';
-//});
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-Route::get('/', function()
-{
-    return view('components.body');
-});
-
-Route::get('/project', 'ProjectController@index');
-Route::get('/project/{id}', 'ProjectController@show');
-
-Route::get('/partner', 'PartnerController@index');
-
-Route::get('/register', 'Auth\AuthController@index');
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    //  主页
+    Route::get('/', function()
+    {
+        return view('welcome');
+    });
+    Route::get('/project', 'ProjectController@index');
+    Route::get('/project/{id}', 'ProjectController@show');
+    Route::post('/project/{id}', 'ProjectController@leave');
+    Route::post('/toFocusProject','ProjectController@toFocus');
+    Route::get('/projectFocus', 'ProjectController@myFocusProject');
+
+    Route::get('/partner', 'PartnerController@index');
+    Route::get('/partner/{id}', 'PartnerController@show');
+    Route::post('/toFocusProject','PartnerController@toFocus');
+    Route::get('/partnerFocus', 'PartnerController@myFocusPartner');
+
+    Route::get('/myProject','ProjectController@myShow');
+    Route::get('/myProject/edit','ProjectController@myEdit');
+    Route::post('/myProject/edit','ProjectController@update');
+
+    Route::get('/profile','ProfileController@show');
+    Route::get('/profile/edit','ProfileController@edit');
+    Route::post('/profile/edit','ProfileController@update');
+
+    Route::get('/setting','SettingController@show');
+    Route::get('/setting/edit','SettingController@edit');
+    Route::post('/setting/edit','SettingController@update');
 });
