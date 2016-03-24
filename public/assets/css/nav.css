@@ -14,7 +14,7 @@ label.mobile_menu span {
 
     /* General Shape */
     position: relative;
-    margin-top: 10px;
+    /*margin-top: 0px;*/
 }
 ul.nav {
     padding: 0;
@@ -93,7 +93,7 @@ ul.nav1 {
 }
 .banner-nav> li > ul {
     top: 60px !important;
-    width: 190px !important;
+    width: 130px !important;
 }
 /* Link Style */
 .nav > li > a {
@@ -185,7 +185,7 @@ ul.nav1 {
     font-size: 13px;
     display: block;
     background-color: #18202B;
-    padding: 10px 10px;
+    padding: 5px 10px;
     position: relative;
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;

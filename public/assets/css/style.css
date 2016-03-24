@@ -1,4 +1,5 @@
 html, body{
+
     font-size:100%;
     background:#fff;
 }
@@ -1606,19 +1607,32 @@ div.register-bottom-grid {
 .about-quote {
     background:url(../images/quote-image.jpg) center center;
     background-size:   cover;
-    min-height:350px;
+    min-height:250px;
+    width:600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.abt-quote {
+.abt-quote-left {
     background:#1BBC9B;
-    min-height:350px;
-    padding-top:5em;
-    padding-left:7em;
+    min-height:250px;
+    padding-top:3em;
+    padding-left:4em;
+    padding-right:4em;
+    float:left;
+}
+.abt-quote-right {
+    min-height:250px;
+    padding-top: 100px;
+    float:right;
+    text-align:center
 }
 .about-quote h5 {
     color: #fff;
-    font-size: 2.7em;
-    letter-spacing: -.07em;
-    font-weight: 400;
+    font-size: 2em;
+    /*letter-spacing: -.07em;*/
+    font-weight: 300;
     margin-bottom: 50px;
 }
 .about-quote span {
@@ -1877,7 +1891,7 @@ ul.list_3 ul li .dt-sc-button {
     background: #fff;
     border: 1px solid #D9E9ED;
     color: #000;
-    padding: 17px;
+    padding: 15px;
     display: block;
     font-size: 14px;
     box-sizing: border-box;
@@ -1887,7 +1901,6 @@ ul.list_3 ul li .dt-sc-button {
     -o-box-sizing: border-box;
     width: 100%;
     outline: none;
-    margin-top: 25px;
 }
 .one-fifth select {
     background: #fff;
@@ -1902,13 +1915,11 @@ ul.list_3 ul li .dt-sc-button {
     font-size: 14px;
     height: 55px;
     outline: medium none;
-    padding: 17px;
+    padding: 15px;
     width: 100%;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin-top: 0;
-    margin-left: 0;
 }
 .one-fifth input[type="submit"] {
     background: #1BBC9B;
@@ -1922,9 +1933,8 @@ ul.list_3 ul li .dt-sc-button {
     cursor: pointer;
     outline: none;
     font-size: 0.85em;
-    padding: 17px 50px;
+    padding: 16px 50px;
     font-weight: 600;
-    margin-top: 25px;
 }
 .one-fifth input[type="submit"]:hover {
     background: #000;
@@ -2462,7 +2472,7 @@ span.menu {
 
 @media screen and (max-width: 1366px) {
     .about-quote h5 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     .banner {
         min-height: 700px;
