@@ -22,7 +22,7 @@
                                     <img src="{{ $user_info->avatar }}" height="60" width="60">
                                 </div>
                             </div>
-                            <input type="file" id="file" name="file"/>
+                            <input type="file" name="img"/>
                             <input type="submit" value="确定" >
                         </form>
                     </div>
