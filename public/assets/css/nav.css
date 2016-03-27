@@ -35,11 +35,12 @@ ul.nav1 {
     float: left;
     margin: 0;
 }
+/*ff 超链接字体颜色*/
 .nav li .active a, .nav li a:hover {
-    color:#fff !important;
+    color:#459FD4 !important;
 }
 .nav1 li .active a, .nav1 li a:hover {
-    color:#fff !important;
+    color:#459FD4 !important;
 }
 .nav > li:nth-child{
     border-right: none;
@@ -75,21 +76,21 @@ ul.nav1 {
 .banner-nav > li:nth-child(4) {
 }
 .banner-nav > li > a {
-    font-weight: 400;
+    font-weight: 400 !important;
     font-style: normal !important;
-    padding: 7px 20px !important;
-    color: #fff !important;
-    margin: 0 5px! important;
-    /* margin: 0 !important; */
-    font-size: 14px !important;
+    padding: 8px 12px !important;
+    color: #66666f;
+    font-size: 16px !important;
     letter-spacing: 1px !important;
     text-transform: uppercase;
 }
+/*ff 超链接块*/
 .banner-nav > li > a:hover {
-    background:rgba(0, 0, 0, 0.6);
+    border-radius: 100px;
+    background:rgba(222, 222, 222, 0.5);
 }
 .banner-nav > li > a.active {
-    background: rgba(0, 0, 0, 0.6);
+    background:rgba(222, 222, 222, 0.5);
 }
 .banner-nav> li > ul {
     top: 60px !important;
@@ -99,19 +100,11 @@ ul.nav1 {
 .nav > li > a {
     padding: 0px 26px 0 15px;
     display: block;
-    color: #FFED04;
     margin: 0;
     font-size: 11px;
     letter-spacing: 1px;
 }
-.nav1 > li > a {
-    padding: 0px 26px 0 15px;
-    display: block;
-    color: #FFED04;
-    margin: 0;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-decoration:none;
+
 }
 .nav > li > a span{
     font-style: italic;
@@ -122,7 +115,7 @@ ul.nav1 {
     font-size: 11px;
     letter-spacing: 0px;
 }
-}
+}/*神奇的括号*/
 .nav > li:nth-child(1) > a,.nav > li:nth-child(5) > a,.nav > li:nth-child(6) > a,
 .nav > li:nth-child(7) > a{
     background:none;
@@ -135,7 +128,7 @@ ul.nav1 {
 }
 .nav li > ul li a:hover{
     text-decoration:none;
-    color: #1BBC9B !important;
+    color: #459FD4 !important;
 }
 /* Simple multilevel dropdown */
 .nav > li > ul {
@@ -146,9 +139,8 @@ ul.nav1 {
     top: 34px ! important;
     width: 160px;
     text-align: left;
-    left: 5px;
     margin-top: 30px;
-    padding: 0px;
+    padding: 0;
     z-index: 99;
     border-bottom-right-radius: 6px;
     -webkit-border-bottom-right-radius: 6px;
@@ -165,9 +157,13 @@ ul.nav1 {
 .nav > li:hover > ul {
     opacity: 1;
     visibility: visible;
-    margin-top: 0px;
-    background-color:#18202B;
-    padding: 10px;
+    /*margin-top: 0px;*/
+    /*ff 下拉菜单颜色*/
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 16px 0 0 -20px;
+    /*padding: 10px;*/
+    position: absolute;
+    text-align: center;
 }
 /* Style for dropdown links */
 .nav li > ul li{
@@ -181,11 +177,10 @@ ul.nav1 {
     border-bottom: none;
 }
 .nav li > ul li a{
-    color: #fff;
-    font-size: 13px;
+    color: #33334f;
+    font-size: 15px;
     display: block;
-    background-color: #18202B;
-    padding: 5px 10px;
+    margin: 10px;
     position: relative;
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
@@ -208,7 +203,8 @@ ul.nav1 {
     -ms-transition: all 0.5s linear;
 }
 .nav ul.dropdown2 {
-    color: #FFF;
+    color: #000;
+    text-align: center;
 }
 .nav ul  li:hover > a {
     color: #787878;

@@ -1,7 +1,8 @@
 html, body{
-
-    font-size:100%;
-    background:#fff;
+    font-family: "Microsoft YaHei", "helvetica neue", arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #f9f9f9;
 }
 body a{
     transition:0.5s all;
@@ -38,10 +39,35 @@ ul{
 label{
     margin:0;
 }
+
+.register-link {
+    padding: 0px 26px 0 15px;
+    display: block;
+    color: #ffddff !important;
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration:none;
+    border-radius: 100px;
+    background-color: rgb(69,159,212);
+}
+.btn-follow:hover, .btn-follow:focus, .btn-follow:active {
+    background-color: #000!important;
+    color: #ffddff;
+    border:none;
+}
+.btn-follow {
+    color: #ffddff;
+    background-color: rgb(69,159,212);
+    background-image: none;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
 /*-- Header Part Starts Here --*/
 .header{
-    background: rgba(27, 188, 155, 0.35);
+    height: 60px;
     padding: 0 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 5px rgba(69, 159, 212, 0.15), 0 0 0 1px rgba(69, 159, 212, 0.05);
 }
 .logo{
     float: left;
@@ -76,7 +102,7 @@ ul.navig li a{
     font-weight:700;
 }
 ul.navig li a:hover{
-    color:#838383;
+    /*color:#838383;*/
 }
 .search-bar{
     /*ff*/
@@ -329,8 +355,10 @@ span.about-icon4 {
 /* 13. pricing table */
 /*******************************************************************************************************/
 .plans {
-    background:#f5f5f5;
-    padding:5em 0 2em 0;
+    padding:5em 0 0 0;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .pricing {
     background: #fff;
@@ -672,6 +700,8 @@ i.s6 {
 div#testimonialWrapper{
     background: #FFF;
     padding: 1.5em 0;
+    margin-left: 5em;
+    margin-right: 5em;
     border-top: 3px solid #CCC;
 }
 
@@ -772,7 +802,7 @@ footer ul.footerMenu, footer ul.footerAddress{
     clear: both;
 }
 footer .tweetTime{
-    color: rgb(136,183,62);
+    rgb(69,159,212);
     font-size: 10px;
     margin-left: 20px;
 }
@@ -793,7 +823,7 @@ footer ul.footerMenu li.title, footer .title,  footer ul.footerAddress li.title{
     display: block;
 }
 footer ul.footerMenu li a,  footer ul.footerAddress li a{
-    color: rgb(136,183,62);
+    rgb(69,159,212);
 }
 footer ul.footerMenu{
     float: left;
@@ -805,7 +835,7 @@ footer #map-canvas{
     border: 1px solid #CCC;
 }
 .greenText {
-    color: rgb(136,183,62);
+    color: rgb(69,159,212);
 }
 footer .footerNews li.title{
     padding-bottom: 0;
@@ -1034,8 +1064,8 @@ div#dedicated_servers {
     margin-top: -5px;
 }
 .button:hover {
-    background: #1BBC9B;
-    border: 2px solid #1BBC9B;
+    background: rgb(69,159,212);
+    border: 2px solid rgb(69,159,212);
     color: #fff;
     text-transform: lowercase;
     font-weight: normal;
@@ -1059,17 +1089,13 @@ div#breadcrumb_wrapper h6 {
 }
 /*-- plans & pricing --*/
 .PlanPricing .price{
-    background:#1BBC9B;
-    padding:0px;
-    color:#FFF;
-    font-size:42px;
+    background: rgb(69,159,212);
     -webkit-border-radius:100%;
     -moz-border-radius:100%;
     border-radius:100%;
     display:block;
     width:100px;
     height:100px;
-    line-height:100px;
     margin:0 auto;
     position:relative;
     margin-top:-107px;
@@ -1089,13 +1115,10 @@ div#breadcrumb_wrapper h6 {
 .PlanPricing .planFeatures ul li {
     padding: 10px 0;
     list-style: none;
-    height: 50px;
 }
 .PlanPricing .btn {
     width: 100%;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
+    border-radius: 0 0 20px 20px;
     margin: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1104,23 +1127,23 @@ div#breadcrumb_wrapper h6 {
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-.btn-success:hover, .btn-success:focus, .btn-success:active {
-    background-color: #22bb5f!important;
-    color: #FFF!important;
-}
+
 .PlanPricing .planName {
     background: #000;
     padding-top: 60px;
     padding-bottom: 10px;
     text-align: center;
+    border-radius: 20px 20px 0 0;
 }
 .PlanPricing .planFeatures {
     background: #e8e9ea;
     text-align: center;
     padding: 10px;
+
 }
 .PlanPricing {
-    margin-top: 100px;
+    margin-top: 90px;
+    width: 250px;
     -moz-transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
     -ms-transition: all 0.6s ease;
@@ -1328,15 +1351,16 @@ div#breadcrumb_wrapper h6 {
 }
 .login-right input[type="text"], input[type="email"], input[type="password"] {
     border: 1px solid #EEE;
-    outline-color:#1BBC9B;
+    outline-color: rgb(69,159,212);
     width: 100%;
     font-size:0.8125em;
     padding: 0.5em;
 }
 .login-right input[type="submit"] {
-    background: #1BBC9B;
+    background: rgb(69,159,212);
     color: #FFF;
     font-size: 1em;
+    border-radius: 100px;
     padding: 0.7em 1.2em;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -1381,14 +1405,14 @@ a.forgot {
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
     border: 1px solid #EEE;
-    outline-color:#1BBC9B;
+    outline-color: rgb(69,159,212);
     width: 96%;
     font-size: 1em;
     padding: 0.5em;
 }
 .register-top-grid input[type="password"], .register-bottom-grid input[type="password"] {
     border: 1px solid #EEE;
-    outline-color: #1BBC9B;
+    outline-color: rgb(69,159,212);
     width: 96%;
     font-size: 1em;
     padding: 0.5em;
@@ -1430,7 +1454,7 @@ a.forgot {
     width:20px;
     height:20px;
     outline: none;
-    border: 2px solid #D2CF99;
+    border: 2px solid rgb(69,159,212);
 }
 .checkbox input + i:after {
     content: '';
@@ -1465,7 +1489,7 @@ a.forgot {
     margin-top:1em;
 }
 .register-but form input[type="submit"] {
-    background:#1BBC9B;
+    background: rgb(69,159,212);
     color: #FFF;
     font-size: 1.2em;
     padding: 0.6em 2em;
@@ -1702,7 +1726,7 @@ span.quotes {
     margin-bottom: 25px;
 }
 .support-grid h5 {
-    color:#1BBC9B;
+    color: rgb(69,159,212);
     font-size: 1.1em;
     text-align: center;
     padding-bottom: 20px;
@@ -1721,7 +1745,7 @@ span.quotes {
 .support-grid a {
     display: inline-block;
     background: transparent;
-    border: 2px solid #1BBC9B;
+    border: 2px solid rgb(69,159,212);
     padding: 8px 27px;
     margin: 0 2px 2px 0;
     color: #000;
@@ -1884,7 +1908,7 @@ ul.list_3 ul li .dt-sc-button {
     padding: 11px 20px;
     line-height: 16px;
     float: right;
-    background:#1BBC9B;
+    background: rgb(69,159,212);
     color:#fff;
 }
 .three-fifth input[type="text"] {
@@ -1922,7 +1946,7 @@ ul.list_3 ul li .dt-sc-button {
     -moz-appearance: none;
 }
 .one-fifth input[type="submit"] {
-    background: #1BBC9B;
+    background: rgb(69,159,212);
     display: inline-block;
     color: #FFF;
     text-transform: uppercase;
@@ -1941,7 +1965,9 @@ ul.list_3 ul li .dt-sc-button {
 }
 .domain_row {
     width: 53%;
-    float:left;
+    /*float: right;*/
+    margin-left: 5em;
+    /*margin-right: auto;*/
 }
 .one-fifth {
     width: 15%;
@@ -2049,8 +2075,9 @@ ul.start li a,ul.start li span{
 }
 /*ff*/
 ul.start li span.prev ,ul.start li a.next{
-    background:#1BBC9B;
-    color:#fff;
+    background: rgb(69,159,212);
+    color:#ffddff;
+    border-radius: 100px;
 }
 
 .blog-in{
