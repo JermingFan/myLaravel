@@ -20,21 +20,14 @@ ul.nav {
     padding: 0;
     list-style: none;
 }
-ul.nav1 {
-    padding: 0;
-    list-style: none;
-}
+
 /* Main element of the naviagtion */
 .nav > li {
     display: inline-block;
     float: left;
     margin: 0;
 }
-.nav1 > li {
-    display: inline-block;
-    float: left;
-    margin: 0;
-}
+
 /*ff 超链接字体颜色*/
 .nav li .active a, .nav li a:hover {
     color:#459FD4 !important;
@@ -58,23 +51,14 @@ ul.nav1 {
     letter-spacing: 1px;
     background: none;
 }
-.nav1 > li:nth-child(1) {
-    display: block;
-    color: #FFED04;
-    margin: 0;
-    font-size: 11px;
-    border: none;
-    letter-spacing: 1px;
-    background: none;
-}
+
 .banner-nav > li {
     background: none;
 }
 .banner-nav > li:nth-child(10) {
     border-right: none;
 }
-.banner-nav > li:nth-child(4) {
-}
+
 .banner-nav > li > a {
     font-weight: 400 !important;
     font-style: normal !important;
@@ -82,15 +66,18 @@ ul.nav1 {
     color: #66666f;
     font-size: 16px !important;
     letter-spacing: 1px !important;
-    text-transform: uppercase;
 }
 /*ff 超链接块*/
 .banner-nav > li > a:hover {
-    border-radius: 100px;
-    background:rgba(222, 222, 222, 0.5);
+    border-radius: 7px;
+    background:rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgba(69, 159, 212, 0.4);
 }
 .banner-nav > li > a.active {
-    background:rgba(222, 222, 222, 0.5);
+    border: rgba(69, 159, 212, 0.4);
+    border-radius: 7px;
+    background:rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgba(69, 159, 212, 0.4);
 }
 .banner-nav> li > ul {
     top: 60px !important;
@@ -98,14 +85,13 @@ ul.nav1 {
 }
 /* Link Style */
 .nav > li > a {
-    padding: 0px 26px 0 15px;
+    padding: 0 26px 0 15px;
     display: block;
     margin: 0;
     font-size: 11px;
     letter-spacing: 1px;
 }
 
-}
 .nav > li > a span{
     font-style: italic;
     padding: 0;
@@ -113,16 +99,9 @@ ul.nav1 {
     color: #787878;
     margin: .5em 0 0 0;
     font-size: 11px;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
-}/*神奇的括号*/
-.nav > li:nth-child(1) > a,.nav > li:nth-child(5) > a,.nav > li:nth-child(6) > a,
-.nav > li:nth-child(7) > a{
-    background:none;
-}
-.nav > li:nth-child(1) > a:hover, .nav > li:nth-child(5) > a:hover, .nav > li:nth-child(6) > a:hover, .nav > li:nth-child(7) > a:hover{
 
-}
 .nav > li:hover > a{
     color: #bbbbbb;
 }
@@ -152,6 +131,7 @@ ul.nav1 {
     -ms-border-bottom-left-radius: 6px;
     -moz-border-bottom-left-radius: 6px;
     -o-border-bottom-left-radius: 6px;
+    border-bottom: 3px solid rgba(69, 159, 212, 0.4);
 }
 /* First level appear */
 .nav > li:hover > ul {
@@ -160,7 +140,7 @@ ul.nav1 {
     /*margin-top: 0px;*/
     /*ff 下拉菜单颜色*/
     background-color: rgba(255, 255, 255, 0.9);
-    margin: 16px 0 0 -20px;
+    margin: 16px 0 0 -16px;
     /*padding: 10px;*/
     position: absolute;
     text-align: center;
@@ -185,7 +165,6 @@ ul.nav1 {
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
 }
 .nav li > ul li a span.arrow{
     width:15px;
@@ -200,7 +179,6 @@ ul.nav1 {
     -moz-transition: all 0.5s linear;
     -webkit-transition: all 0.5s linear;
     -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
 }
 .nav ul.dropdown2 {
     color: #000;
@@ -216,11 +194,9 @@ ul.nav1 {
     visibility: hidden;
     position: absolute;
     list-style: none;
-    top:0px;
     left: 200px;
     width: 200px;
     text-align: left;
-    padding: 0px;
     margin-left: 30px;
 }
 .nav > li > ul li ul li:hover {
@@ -237,7 +213,7 @@ input#mobile_menu { display: none; }
 .nav > li ul li:hover > ul {
     opacity: 1;
     visibility: visible;
-    margin-left: 0px;
+    margin-left: 0;
 }
 /* Full width dropdown */
 .nav > li > .fulldrop {
@@ -246,7 +222,7 @@ input#mobile_menu { display: none; }
     position: absolute;
     list-style: none;
     top:118px;
-    left: 0px;
+    left: 0;
     background-color: #0078b3;
     width: 100%;
     min-height: 100px;
@@ -260,7 +236,7 @@ input#mobile_menu { display: none; }
 .nav > li:hover .fulldrop {
     opacity: 1;
     visibility: visible;
-    margin-top: 0px;
+    margin-top: 0;
 }
 .nav ul li:hover:after {
     color: white;
@@ -276,14 +252,13 @@ input#mobile_menu { display: none; }
     min-height: 100px;
     text-align: left;
     margin-top:30px;
-    padding: 0;
     padding: 0 10px;
     z-index: 99;
 }
 .nav > li:hover .coldrop {
     opacity: 1;
     visibility: visible;
-    margin-top: 0px;
+    margin-top: 0;
 }
 .nav .coldrop .column {width: 130px;margin:0 9px;}
 /* coldrop for full width dropdown */
@@ -320,7 +295,7 @@ input#mobile_menu { display: none; }
 }
 @media all and (max-width:1280px) {
     .nav > li > a {
-        4font-size: 13px;
+        font-size: 13px;
         letter-spacing: 0;
     }
     .navigation {
@@ -343,7 +318,7 @@ input#mobile_menu { display: none; }
     }
 
     .nav > li:nth-child(1) {
-        padding: 0px 6px;
+        padding: 0 6px;
     }
 
 }
@@ -356,7 +331,6 @@ input#mobile_menu { display: none; }
     .nav {
         display: none;
     }
-
 
     label.mobile_menu span {
         display: inline;
@@ -380,7 +354,6 @@ input#mobile_menu { display: none; }
     ul.nav {
         padding: 0;
         list-style: none;
-        padding: 0;
         margin: 0;
         z-index: 9999;
         position: absolute;
@@ -397,7 +370,7 @@ input#mobile_menu { display: none; }
     }
     .nav > li {
         border-right: none;
-        padding:5px 0px;
+        padding:5px 0;
         position: relative;
     }
     .nav > li > a {
@@ -423,7 +396,7 @@ input#mobile_menu { display: none; }
     }
 
     .nav li > ul li {
-        padding: 18px 0px;
+        padding: 18px 0;
     }
 
     .nav .column, .nav .coldrop .column {
@@ -460,7 +433,7 @@ input#mobile_menu { display: none; }
     .nav > li > ul li ul li ul {
         width: 100%;
         top:43px;
-        left: 0px;
+        left: 0;
         margin-left: 0;
         margin-top: 30px;
     }
@@ -468,18 +441,18 @@ input#mobile_menu { display: none; }
         margin-top: 0;
     }
     .nav > li > ul li{
-        padding:0px 0 0px 0%;
+        padding:0;
         width:100%;
     }
     .nav > li > ul li ul {
         margin-left:0;
     }
     .nav > li > ul li ul li{
-        padding: 5px 0 5px 0%;
+        padding: 5px 0 5px 0;
         width:100%;
     }
     .nav > li > ul li ul li ul li{
-        padding: 15px 0 15px 0%;
+        padding: 15px 0 15px 0;
         width:100%;
     }
     .nav ul li.dropdown:after {
@@ -510,64 +483,75 @@ input#mobile_menu { display: none; }
 @media only screen and (max-width:1024px) {
     .banner-nav > li > a {
         padding: 7px 13px !important;
-        margin: 0 0px! important;
+        margin: 0 0! important;
         font-size: 13px !important;
     }
     .nav > li > ul {
-        left: 0px;
+        left: 0;
     }
 }
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px) {
     .nav > li > a.down-scroll {
         background: url(../images/menu-arrow.png) no-repeat 97% 48%;
     }
+
     .nav > li > ul {
         top: 48px ! important;
     }
-    @media only screen and (max-width:768px) {
+
+    @media only screen and (max-width: 768px) {
         .nav > li > ul {
             width: 100% !important;
         }
+
         .banner-nav > li > a {
             padding: 14px 13px !important;
         }
+
         ul.nav {
             background-color: #313842;
         }
+
         .nav li > ul li a span.arrow {
-            right:20px;
-            background: url(../images/nav-arrow2.png) no-repeat center;
+            right: 20px;
+            /*background: url(../images/nav-arrow.png) no-repeat center;*/
         }
-        .nav > li:hover > a{
-            background:;
+
+        .nav > li:hover > a {
+            /*background:;*/
         }
+
         .nav > li:nth-child(1) {
-            padding: 0px 0px;
-            background:none;
+            padding: 0 0;
+            background: none;
         }
     }
-    @media only screen and (max-width:640px) {
+    @media only screen and (max-width: 640px) {
         .banner-nav > li > a {
             padding: 10px 14px !important;
         }
     }
-    @media only screen and (max-width:480px) {
+    @media only screen and (max-width: 480px) {
         label.mobile_menu {
             padding: 7px 0;
             margin-top: 8px;
         }
+
         label.mobile_menu:after {
             font-size: 25px;
         }
     }
-    @media only screen and (max-width:320px){
+    @media only screen and (max-width: 320px) {
         .nav1 > li > a {
-            padding: 0px 10px 0 10px;
+            padding: 0 10px 0 10px;
         }
+
         .banner-nav > li > a {
             padding: 6px 14px !important;
         }
+
         .nav > li > ul {
             top: 39px ! important;
         }
     }
+}
