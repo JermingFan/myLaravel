@@ -6,14 +6,6 @@ jQuery.extend({
         var frameId = 'jUploadFrame' + id;
 
         if(window.ActiveXObject) {
-            //var io = document.createElement('<iframe id="' + frameId + '" name="' + frameId + '" />');
-            //if(typeof uri== 'boolean'){
-            //    io.src = 'javascript:false';
-            //}
-            //else if(typeof uri== 'string'){
-            //    io.src = uri;
-            //}
-
             if(jQuery.browser.version=="9.0" || jQuery.browser.version=="10.0")
             {
                 var io = document.createElement('iframe');
@@ -161,7 +153,6 @@ jQuery.extend({
                 }, 100);
 
                 xml = null
-
             }
         }
 
