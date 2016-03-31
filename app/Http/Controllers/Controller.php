@@ -10,4 +10,23 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    protected function _returnMessage($content,$state)
+    {
+        return response()->json(
+            array(
+                'content'=>$content,
+                'state'=>$state,
+            )
+        );
+    }
+    protected function _returnMessageFile($content,$state)
+    {
+        $result['state'] = $state;
+        $result['content'] = $content;
+        return json_encode($result);
+    }
 }
