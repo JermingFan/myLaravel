@@ -29,24 +29,22 @@ class MessageController extends Controller
         }
         else return redirect()->guest('login');
     }
-    public function toMessage()
+    public function toMessage(Request $request)
     {
-//        if (Auth::check())
-//        {
-//            $mesFocus = $this->message->getMesFocus($request->user()->id);
-            $mesInterest = $this->message->getMesInterest(3);
-        var_dump($mesInterest);
-//        var_dump($mesInterest);die;
-//            $data['focus'] = $mesFocus;
-//            $data['interest'] = $mesInterest;
-//            //设置为已读
-//            $data['signal'] = 1;
-//            $this->message->signMes((int)$request->user()->id);
-//            return view('users.news')->with('data',$data);
-//        }
-//        else return redirect()->guest('login');
+        if (Auth::check())
+        {
+            $mesFocus = $this->message->getMesFocus($request->user()->id);
+            $mesInterest = $this->message->getMesInterest($request->user()->id);
+            $data['focus'] = $mesFocus;
+            $data['interest'] = $mesInterest;
+            //设置为已读
+            $data['signal'] = 1;
+            $this->message->signMes((int)$request->user()->id);
+            return view('users.news')->with('data',$data);
+        }
+        else return redirect()->guest('login');
     }
-    //同意
+
     public function toAgree(Request $request)
     {
         if (Auth::check())
