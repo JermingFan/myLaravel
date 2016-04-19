@@ -13,12 +13,12 @@
     <link href="{{asset('/assets/css/nav.css')}}" rel="stylesheet" type="text/css" media="all"/>
 
     @yield('styles')
+    <script src="{{asset('/assets/js/jquery-2.2.0.min.js')}}"></script>
 </head>
 <body>
 @include('layouts.navbar')
 @yield('content')
 @include('layouts.footer')
-<script src="{{asset('/assets/js/jquery-2.2.0.min.js')}}"></script>
 <script src="{{asset('/assets/js/scrolltopcontrol.js')}}"></script>
 <script>
     setInterval("myInterval()",5000000);//1000为1秒钟
