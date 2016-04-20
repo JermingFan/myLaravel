@@ -7,13 +7,14 @@
     <meta name="keywords" content="" />
     <meta name="_token" content="{{ csrf_token() }}"/>
     <link href="{{asset('/assets/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('/assets/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- Custom Theme files -->
     <link href="{{asset('/assets/css/style.css')}}" rel='stylesheet' type='text/css' />
     <link href="{{asset('/assets/css/nav.css')}}" rel="stylesheet" type="text/css" media="all"/>
+    <script src="{{asset('/assets/js/jquery-2.2.0.min.js')}}"></script>
 
     @yield('styles')
-    <script src="{{asset('/assets/js/jquery-2.2.0.min.js')}}"></script>
+
 </head>
 <body>
 @include('layouts.navbar')
@@ -21,7 +22,7 @@
 @include('layouts.footer')
 <script src="{{asset('/assets/js/scrolltopcontrol.js')}}"></script>
 <script>
-    setInterval("myInterval()",5000000);//1000为1秒钟
+    setInterval("myInterval()",3000000);//1000为1秒钟
     function myInterval()
     {
         $.ajax({
