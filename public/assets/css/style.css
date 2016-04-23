@@ -97,7 +97,7 @@ label{
 }
 .mentor .mentor-cards .mentor-card {
     width: 192px;
-    height: 300px;
+    height: 350px;
     float: left;
     position: relative;
     border: 1px solid #ddd;
@@ -121,7 +121,7 @@ label{
     width: 100%; }
 .mentor .mentor-cards .mentor-card .mentor-card-header img {
     width: 100%;
-    height: 120px;
+    height: 160px;
     border: none; }
 .mentor .mentor-cards .mentor-card .mentor-card-body .mentor-card-name {
     width: 90%;
@@ -136,7 +136,7 @@ label{
     margin-left: 5px; }
 .mentor .mentor-cards .mentor-card .mentor-card-body .mentor-card-desc {
     width: 90%;
-    height: 130px;
+    height: 110px;
     margin: 0 auto;
     color: #666;
     font-size: 13px;
@@ -149,8 +149,8 @@ label{
     bottom: 0;
     left: 5%;
     overflow: hidden;
-    height: 25px;
-    line-height: 25px; }
+    height: 20px;
+    line-height: 20px; }
 .mentor .mentor-cards .mentor-card .mentor-card-tags .mentor-card-tag {
     color: #03bbff;
     font-size: 14px;
@@ -356,7 +356,7 @@ nav a:focus, ul.navig a:hover, ul.navig a:focus {
 }
 .banner-info {
     background: rgba(0, 0, 0, 0.7);
-    margin-top: 22em;
+    margin-top: 15em;
     padding: 1em 1em 1em 2em;
     width: 50%;
     float: right;
@@ -835,9 +835,9 @@ div#testimonialWrapper{
 
 /*ff*/
 div#testimonialWrapper #testimonialPicture{
-    width: 145px;
+    width: 220px;
     height: 145px;
-    border-radius: 100px;
+    border-radius: 5px;
 }
 
 div#testimonialWrapper h2{
@@ -1489,8 +1489,22 @@ div#breadcrumb_wrapper h6 {
     width: 200px;
 }
 a.forgot {
-    font-size: 1em;
-    margin-right: 11px;
+    /*font-size: 1em;*/
+    /*border: 2px solid rgb(70,160,230);*/
+    color: #66666f;
+    float: left;
+}
+a.list-forgot {
+    /*font-size: 1em;*/
+    /*border: 2px solid rgb(70,160,230);*/
+    color: #66666f;
+    float: right;
+}
+a.register {
+    /*font-size: 1em;*/
+    /*border: 2px solid rgb(70,160,230);*/
+    color: #66666f;
+    float: right;
 }
 .login-page {
     padding: 5em 0;
@@ -1534,18 +1548,18 @@ a.forgot {
     padding: 0.5em;
 }
 .checkbox {
-    margin-bottom: 4px;
+    /*margin-bottom: 4px;*/
     padding-left: 27px;
-    font-size: 1.1em;
-    line-height: 27px;
+    font-size: 1em;
+    /*line-height: 27px;*/
     cursor: pointer;
 }
-.checkbox {
-    float: left;
-    position: relative;
-    font-size: 0.85em;
-    color:#66666f;
-}
+/*.checkbox {*/
+    /*float: left;*/
+    /*position: relative;*/
+    /*font-size: 0.85em;*/
+    /*color:#66666f;*/
+/*}*/
 .checkbox:last-child {
     margin-bottom: 0;
 }
@@ -1745,7 +1759,7 @@ div.register-bottom-grid {
     padding: 5px 0;
 }
 .about-quote {
-    /*background:url(../images/quote-image.jpg) center center;*/
+    background:url(../images/quote-image.jpg) center center;
     background-size:   cover;
     min-height:250px;
     width:600px;
@@ -3905,27 +3919,59 @@ span.menu {
 .setting-input-text{
     padding: 10px;
     height: 50px;
-    width: 60%;
+    width: 100%;
     border: 1px solid #d0d0d0;
-    border-radius: 5px
+    border-radius: 5px;
+    font-size: 14px !important;
+    line-height: normal !important;
+}
+.setting-input-textarea{
+    padding: 5px !important;
+    height: 100px;
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    font-size: 14px !important;
+    line-height: normal !important;
+}
+.tip{
+    height: 10px;
+    width: 100%;
+    font-size: 10px;
+    color: #6f6f6f
 }
 .setting-select{
     padding: 10px;
     height: 50px;
-    width: 60%;
+    width: 100%;
     border: 1px solid #d0d0d0;
-    border-radius: 5px
+    border-radius: 5px;
+    font-size: 14px !important;
+    line-height: normal !important;
 }
 .setting-submit {
     background: rgb(70,160,230);
     color: #FFF;
-    font-size: 1em;
-    margin-left: 30%;
+    font-size: 18px !important;
+    margin-left: 25%;
     border-radius: 5px;
     display: inline-block;
     border:none;
     outline:none;
     width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: normal !important;
+}
+.list-a {
+    background: rgb(255, 255, 255);
+    color: #66666f;
+    font-size: 18px !important;
+    border-radius: 5px;
+    display: inline-block;
+    border: 3px solid rgb(70, 160, 230);
+    outline:none;
+    width: 50%;
     height: 50px;
     text-align: center;
     line-height: normal !important;
@@ -4381,4 +4427,9 @@ input[type='file'] {
     display: block;
     height: 300px;
     float: right;
+}
+.img-edit {
+    display: block;
+    height: 300px;
+    float: left;
 }

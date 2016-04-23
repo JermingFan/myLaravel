@@ -7,7 +7,15 @@
             <div class="col-sm-5 col-sm-offset-1 setting">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                     {!! csrf_field() !!}
-
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <div style="font-size: 1.5em">姓名<label>*</label></div>
                         <input type="text" name="name" value="{{ old('name') }}" class="setting-input-text">
@@ -47,7 +55,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('geetest') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
                         <div style="font-size: 1.5em">拖动验证<label>*</label></div>
 
                         <div class="box" id="div_geetest_lib">
