@@ -27,7 +27,7 @@ class MessageController extends Controller
             }
             return $this->_returnMessageFile('no news',100);
         }
-        else return redirect()->guest('login');
+        return $this->_returnMessageFile('no news',100);
     }
     public function toMessage(Request $request)
     {
@@ -45,6 +45,7 @@ class MessageController extends Controller
         else return redirect()->guest('login');
     }
 
+    //同意
     public function toAgree(Request $request)
     {
         if (Auth::check())
