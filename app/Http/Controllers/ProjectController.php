@@ -27,8 +27,7 @@ class ProjectController extends Controller {
 
     public function index(Request $request)
     {
-        $name = $request->name;
-        $data = $this->project->projects($name);
+        $data = $this->project->projects($request);
         return view('projects.list')->withProjects($data);
     }
 
@@ -36,9 +35,7 @@ class ProjectController extends Controller {
     {
         if (Auth::check())
         {
-            //项目内容
             $data = Project::find($id);
-            //根据user_id查profile表里的email和phone
             $profile = new Profile();
             $profiles = $profile->getInfo($data->user_id);
             $data->email = $profiles->email;
@@ -98,6 +95,7 @@ class ProjectController extends Controller {
         }
         else return redirect()->guest('login');
     }
+
     public function leave($id,Request $request)
     {
         if (Auth::check())
@@ -105,12 +103,9 @@ class ProjectController extends Controller {
             $leaver_id = $request->user()->id;
             $message = $request->all();
             $insert = $this->leave_message->insertLeave($id,$leaver_id,$message['leave']);
-            if($insert != 1)
-            {
+            if ($insert != 1) {
                 return "留言失败";
-            }
-            else//留言成功 ，刷新页面
-            {
+            } else {
                 //项目内容
                 $data = Project::find($id);
                 //留言信息
@@ -141,6 +136,7 @@ class ProjectController extends Controller {
                 {
                     $data['like'] = 1;
                 }
+
                 $interest = new Interest_relations();
                 $interest_result = $interest->getInterest($request->user()->id,$id,1);
                 if(empty($interest_result))
@@ -163,9 +159,7 @@ class ProjectController extends Controller {
         {
             $from_id = $request -> user() -> id;//关注者
             $all = $request->all();
-            //根据项目id获取user_id
             $to_id = $this->project->getUserId($all['item_id'])->user_id;
-            //查询to_id的name和email
             $user = new User();
             $userInfo = $user->getEmail($to_id);
             switch($all['type'])//1关注，2点赞，3感兴趣
@@ -175,13 +169,10 @@ class ProjectController extends Controller {
                     {
                         return $this->_returnMessage('不能关注自己的项目',102);
                     }
-                    //查询是否关注过
                     $focus = new User_relation();
                     $focus_result = $focus->getFocus($from_id,$all['item_id'],1);
-                    //未关注过
                     if(empty($focus_result))
                     {
-                        //插入关注记录
                         $insert = $focus->insertFocus($from_id,$to_id,$all['item_id'],1);
                         if($insert!=1)
                         {
@@ -189,16 +180,13 @@ class ProjectController extends Controller {
                         }
                         else
                         {
-                            //更新项目关注数
                             $update = $this->project->updateFocus($all['item_id']);
                             if($update!=1)
                             {
                                 return $this->_returnMessage('更新失败',101);
                             }
-                            //发送信息给被关注者（插入）
                             $mes = new Message();
                             $mes->insertMes($from_id,$to_id,$all['item_id'],1,1);
-                            //发送邮件给被关注的人
                             $data = ['email'=>$userInfo->email, 'name'=>$userInfo->name];
                             Mail::send('activemail', $data, function($message) use($data)
                             {
@@ -207,17 +195,14 @@ class ProjectController extends Controller {
                             return $this->_returnMessage('关注成功',200);
                         }
                     }
-                    //关注过
                     else
                     {
                         return $this->_returnMessage('已关注过',102);
                     }
                 break;
                 case 2:
-                    //查询是否点赞
                     $like = new Like_relations();
                     $like_result = $like->getLike($from_id,$all['item_id'],1);
-                    //未点赞
                     if(empty($like_result))
                     {
                         //插入关注记录
@@ -228,19 +213,16 @@ class ProjectController extends Controller {
                         }
                         else
                         {
-                            //更新项目点赞数
                             $update = $this->project->updateLike($all['item_id']);
                             if($update!=1)
                             {
                                 return $this->_returnMessage('更新失败',101);
                             }
-                            //发送信息给被点赞者（插入）
 //                            $mes = new Message();
 //                            $mes->insertMes($from_id,$to_id,$all['item_id'],2,1);
                             return $this->_returnMessage('点赞成功',201);
                         }
                     }
-                    //已点赞
                     else
                     {
                         return $this->_returnMessage('已赞',102);
@@ -251,13 +233,10 @@ class ProjectController extends Controller {
                     {
                         return $this->_returnMessage('不能向自己的项目发送感兴趣',102);
                     }
-                    //查询是否感兴趣
                     $interest = new Interest_relations();
                     $interest_result = $interest->getInterest($from_id,$all['item_id'],1);
-                    //未
                     if(empty($interest_result))
                     {
-                        //插入记录
                         $insert = $interest->insertInterest($from_id,$to_id,$all['item_id'],1);
                         if($insert != 1)
                         {
@@ -265,16 +244,13 @@ class ProjectController extends Controller {
                         }
                         else
                         {
-                            //更新项目点赞数
                             $update = $this->project->updateInterest($all['item_id']);
                             if($update!=1)
                             {
                                 return $this->_returnMessage('更新失败',101);
                             }
-                            //插入一条消息（插入）
                             $mes = new Message();
                             $mes->insertMes($from_id,$to_id,$all['item_id'],3,1);
-                            //发送邮件给被关注的人
                             $data = ['email'=>$userInfo->email, 'name'=>$userInfo->name];
                             Mail::send('activemail', $data, function($message) use($data)
                             {
@@ -283,7 +259,6 @@ class ProjectController extends Controller {
                             return $this->_returnMessage('感兴趣成功',202);
                         }
                     }
-                    //已
                     else
                     {
                         return $this->_returnMessage('已感兴趣',102);
@@ -297,7 +272,6 @@ class ProjectController extends Controller {
         else return redirect()->guest('login');
     }
 
-    //我关注的项目
     public function myFocusProject(Request $request)
     {
         if (Auth::check())
@@ -308,13 +282,11 @@ class ProjectController extends Controller {
         }
         else return redirect()->guest('login');
     }
-    //我的项目展示页
     public function myShow(Request $request)
     {
         if (Auth::check())
         {
             $user_info = $this->project->getInfo($request->user()->id);
-            //user_id查email和phone
             $profile = new Profile();
             $user_profile = $profile->getInfo($request->user()->id);
             if(!empty($user_info))
@@ -331,7 +303,7 @@ class ProjectController extends Controller {
         }
         else return redirect()->guest('login');
     }
-    //编辑按钮,我的项目
+
     public function myEdit(Request $request)
     {
         if (Auth::check())
@@ -346,13 +318,12 @@ class ProjectController extends Controller {
             $user_profile = $profile->getInfo($request->user()->id);
             $user_info->email = $user_profile->email;
             $user_info->phone = $user_profile->phone;
-            //邮箱默认为注册邮箱
             if(empty($user_info->email))
             {
                 $user = new User();
                 $user_info->email = $user->getEmail($request->user()->id)->email;
             }
-            if(empty($user_info->project_img))$user_info->project_img = PROJECT_IMG;//默认项目图片
+            if(empty($user_info->project_img))$user_info->project_img = PROJECT_IMG;
             $user_info->types = unserialize(PROJECT_TYPE);
             $user_info->developments = unserialize(PROJECT_DEVELOP);
             $user_info->team_numss = unserialize(TEAM_NUMS);
@@ -376,13 +347,11 @@ class ProjectController extends Controller {
         'require'=>'required|max:30'
     );
 
-    //我的项目,上传
     public function update(Request $request)
     {
         if (Auth::check())
         {
             $all = $request->all();
-            //验证输入
             Validator::extend('mobile', function($attribute, $value, $parameters)
             {
                 return preg_match('/^1[34578]\d{9}$/', $value);
@@ -396,7 +365,6 @@ class ProjectController extends Controller {
                 $show_warning = $warnings->first();
                 return $this->_returnMessageFile($show_warning,100);
             }
-            //项目图片
             $disk = QiniuStorage::disk('qiniu');
             $all['url'] = '';
             if(!empty($_FILES["img"]["tmp_name"]))
@@ -406,7 +374,6 @@ class ProjectController extends Controller {
                     $all['url'] = $disk->downloadUrl(date('Y/m/d').'/'.md5($_FILES["img"]["name"]));
                 }
             }
-            //查询是否创建过项目
             $user_info = $this->project->getInfo($request->user()->id);
             if(empty($user_info))
             {
@@ -425,7 +392,6 @@ class ProjectController extends Controller {
                     return $this->_returnMessageFile('更新失败',101);
                 }
             }
-            //插入email和phone
             $profile = new Profile();
             $prof_info = $profile->getInfo($request->user()->id);
             if(empty($prof_info))
