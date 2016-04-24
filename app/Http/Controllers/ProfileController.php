@@ -18,7 +18,7 @@ class ProfileController extends Controller
         parent::__construct();
         $this->profile = $profile;
     }
-    //展示个人资料
+
     public function show(Request $request)
     {
         if (Auth::check())
@@ -37,14 +37,13 @@ class ProfileController extends Controller
         }
         else return redirect()->guest('login');
     }
-    //编辑
+
     public function edit(Request $request)
     {
         if (Auth::check())
         {
             $user_info = $this->profile->getInfo($request->user()->id);
             if(empty($user_info->profile_img))$user_info->profile_img = PROFILE_IMG;
-            //邮箱默认为注册邮箱
             if(empty($user_info->email))
             {
                 $user = new User();
@@ -57,13 +56,12 @@ class ProfileController extends Controller
         }
         else return view('auth.login');
     }
-    //编辑上传
+
     public function update(Request $request)
     {
         if (Auth::check())
         {
             $all = $request->all();
-            //简历图片
             $disk = QiniuStorage::disk('qiniu');
             $all['url'] = '';
             if(!empty($_FILES["img"]["tmp_name"]))
@@ -73,7 +71,6 @@ class ProfileController extends Controller
                     $all['url'] = $disk->downloadUrl(date('Y/m/d').'/'.md5($_FILES["img"]["name"]));
                 }
             }
-            //查询是否创建过
             $user_info = $this->profile->getInfo($request->user()->id);
             if(empty($user_info))
             {

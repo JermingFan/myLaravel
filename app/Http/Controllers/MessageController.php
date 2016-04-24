@@ -37,7 +37,6 @@ class MessageController extends Controller
             $mesInterest = $this->message->getMesInterest($request->user()->id);
             $data['focus'] = $mesFocus;
             $data['interest'] = $mesInterest;
-            //设置为已读
             $data['signal'] = 1;
             $this->message->signMes((int)$request->user()->id);
             return view('users.news')->with('data',$data);
@@ -45,7 +44,6 @@ class MessageController extends Controller
         else return redirect()->guest('login');
     }
 
-    //同意
     public function toAgree(Request $request)
     {
         if (Auth::check())

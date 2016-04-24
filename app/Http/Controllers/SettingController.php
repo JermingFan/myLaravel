@@ -25,7 +25,6 @@ class SettingController extends Controller
     {
         if (Auth::check())
         {
-            //获取用户profile
             $result = $this->profile->getInfo($request->user()->id);
             if(empty($result))
             {
