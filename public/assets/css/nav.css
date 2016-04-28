@@ -25,9 +25,22 @@ label.mobile_menu span {
     border: 1px #ddddff solid;
     border-radius: 100px;
     margin: 1px 1px 1px 10px;
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+    /* Safari, Chrome, and Opera */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
 }
 .nav-img img {
     /*max-width: px;*/
+    margin-left: -10px;
     max-height: 40px;
     text-align: right;
 }

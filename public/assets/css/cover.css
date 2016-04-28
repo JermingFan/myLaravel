@@ -1,0 +1,99 @@
+html,
+body {
+    height: 100%;
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    background-image: url(../images/pic7.jpg);
+    background-size: 100%;
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+}
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.cover-heading{
+    color: #fff;
+    line-height: 2.5em;
+}
+
+.incubator-lead{
+    color: #fff;
+    height: 190px;
+    font-weight: 500;
+    line-height: 2em;
+    font-size: 21px;
+}
+.lead-more{
+    color: #fff;
+    float: right;
+    bottom: 0;
+    line-height: 2em;
+}
+
+/* Padding for spacing */
+.inner {
+    margin-top: 80px;
+    padding: 30px;
+    background-color: rgba(70,160,230,0.2);
+    box-shadow: 1px 1px 255px #000;
+    border-radius: 20px;
+    height: 400px;
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+    padding: 0 20px;
+}
+.cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    .mastfoot {
+        position: fixed;
+        bottom: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
+    /* Handle the widths */
+    .masthead,
+    .mastfoot,
+    .cover-container {
+        width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead,
+    .mastfoot,
+    .cover-container {
+        width: 700px;
+    }
+}
